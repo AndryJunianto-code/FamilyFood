@@ -8,18 +8,13 @@ function App() {
   const getFood = async () => {
     const res = await axios.get('/foods')
     setFoods(res.data)
+    console.log(res.data)
   }
   useEffect(()=> {  
     getFood()
   },[])
   return (
     <div>
-      {foods && foods.map(food=> (
-        <div key={food._id}>
-          <h1 className='text-red-500 text-6xl font-extrabold'>{food.name}</h1>
-          <h1 className='text-sm text-blue-500 font-extrabold'>{food.age}</h1>
-          </div>
-      ))}
      <h1 className='text-red-500 font-extrabold'>BODOH</h1>
     </div>
   );
