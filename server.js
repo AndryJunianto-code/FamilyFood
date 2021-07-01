@@ -3,10 +3,18 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 const cors = require('cors')
 const foodRoutes = require('./routes/foodRoutes')
+const proxy = require('http-proxy-middleware')
+
 
 const app = express();
 app.use(cors())
 dotenv.config()
+
+
+module.exports = function(app) {
+  // add other server routes to path array
+  app.use(proxy({ target: 'http://localhost:5000' }));
+} 
 
 mongoose.connect(process.env.DB_URI, {
     useUnifiedTopology: true,
