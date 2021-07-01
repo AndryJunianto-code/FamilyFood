@@ -6,7 +6,7 @@ function App() {
   const [foods, setFoods] = useState([])
 
   const getFood = async () => {
-    const res = await axios.get('/api/foods')
+    const res = await axios.get('/foods')
     setFoods(res.data)
     console.log(res.data)
   }
