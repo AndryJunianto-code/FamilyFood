@@ -1,15 +1,17 @@
 import Navbar from './components/Navbar';
-import Header from './components/Header';
-import HomeContent from './components/HomeContent';
-
+import Home from './pages/Home'
+import Gallery from './pages/Gallery'
+import {Switch, Route} from 'react-router-dom'
 function App() {
 
   return (
-    <section className=' py-4 bg-gray-900'>
-      <Navbar/>
-      <Header/>
-      <HomeContent/>
-    </section>
+    <>
+    <Navbar/>
+    <Switch>
+    <Route exact path='/'><Home/></Route>
+    <Route path='/gallery'><Gallery/></Route>
+    </Switch>
+    </>
   );
 }
 
