@@ -20,7 +20,7 @@ function App() {
           <h1 className='text-sm text-blue-500 font-extrabold'>{food.age}</h1>
           </div>
       ))} */}
-     holaaaa
+     <h1 className='text-red-500 font-extrabold'>BODOH</h1>
     </div>
   );
 }
