@@ -1,5 +1,5 @@
 const colors = require('tailwindcss/colors')
-/* zindex */
+/* height */
 module.exports = {
   purge: [],
   presets: [],
@@ -429,6 +429,8 @@ module.exports = {
       '5/6': '83.333333%',
       full: '100%',
       screen: '100vh',
+      "100": "28rem",
+      "104": "32rem"
     }),
     inset: (theme, { negative }) => ({
       auto: 'auto',
@@ -801,8 +803,7 @@ module.exports = {
       20: '20',
       30: '30',
       40: '40',
-      50: '50',
-      '-10': '-10',
+      50: '50'
     },
   },
   variantOrder: [
