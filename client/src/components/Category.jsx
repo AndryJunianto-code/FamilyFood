@@ -1,16 +1,22 @@
-import { AddCircleOutline, Star,StarOutline } from "@material-ui/icons"
-import { useState } from "react";
 import './index.css'
+import { AddCircleOutline} from "@material-ui/icons"
+import {Link} from 'react-router-dom'
+
+
 
 export default function Category({category}) {
-    const [menuOpen, setMenuOpen] = useState(false);
-
-
+   
     return (
         <div className="outer-card text-gray-100 w-full px-14 py-10 flex items-center justify-center flex-col border-b-2 border-gray-600">
-                <h1 className='mb-3 text-5xl tracking-widest uppercase'>{category.name}</h1>
-                <AddCircleOutline style={{fontSize: "40px"}}/>
-            </div>
+                         
+
+                            <h1 className='mb-3 text-5xl tracking-widest uppercase'>{category.name}</h1>
+                            <Link className='no-underline' to={`/gallery/${category.name}`}>
+                                <AddCircleOutline style={{fontSize: "40px"}} />
+                            </Link>
+                            
+                        
+        </div>
     )
 }
 

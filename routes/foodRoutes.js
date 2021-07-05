@@ -36,8 +36,9 @@ router.put('/foods/:id', verify, async(req,res)=> {
 })
 
 
-router.get('/foods', async (req,res)=> {
-    const categoryQuery = req.query.category;
+router.get('/foods/:category', async (req,res)=> {
+    /* const categoryQuery = req.query.category; */
+    const categoryQuery = req.params.category
     try{
         let foods;
         if(categoryQuery) {

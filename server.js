@@ -1,7 +1,11 @@
 const express = require('express');
+const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 const cors = require('cors')
+const Food = require('./models/Food')
+const server = require('http').createServer(app)
+
 const cookieparser = require('cookie-parser')
 const foodRoutes = require('./routes/foodRoutes')
 const authRoutes = require('./routes/authRoutes')
@@ -9,7 +13,6 @@ const categoryRoutes = require('./routes/categoryRoutes')
 const proxy = require('http-proxy-middleware')
 
 
-const app = express();
 app.use(cors())
 app.use(express.json())
 app.use(cookieparser())
@@ -39,7 +42,7 @@ if (process.env.NODE_ENV === "production") {
   }
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+app.listen(PORT);/* APP */
 app.use("/api",foodRoutes)
 app.use("/api",authRoutes)
 app.use('/api', categoryRoutes)
